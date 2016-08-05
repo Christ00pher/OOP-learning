@@ -12,6 +12,7 @@ private:
     std::vector <char> password;
     enum Sign{letter};
     enum Letter{great};
+    bool repeat;
 public:
     Generator();
     ~Generator();
@@ -19,5 +20,5 @@ public:
     void getLength();
     void generatePassword();
     void saveToFile();
-    bool repeat();
+    bool toRepeat();
 };
