@@ -3,7 +3,7 @@
 Generator::Generator()
 {
     srand(time(NULL));
-    getLength();
+    repeat = true;
 }
 
 Generator::~Generator()
@@ -28,6 +28,7 @@ void Generator::getLength()
 
 void Generator::generatePassword()
 {
+    password.clear();
     for (unsigned i = 0; i < amount; i++)
     {
         //if random number == 0, then we generate a letter
@@ -45,14 +46,6 @@ void Generator::generatePassword()
     }
 }
 
-bool Generator::repeat()
-{
-    char repeat;
-    std::cout << "\nCreate other password (y/n): ";
-    std::cin >> repeat;
-    return (repeat == 'y');
-}
-
 void Generator::saveToFile()
 {
     std::ofstream file;
@@ -63,4 +56,13 @@ void Generator::saveToFile()
     file.close();
     std::cout << "Password was succesfully saved to file.\n";
     password.clear();
+}
+
+bool Generator::toRepeat()
+{
+    char rep;
+    std::cout << "\nCreate other password (y/n): ";
+    std::cin >> rep;
+    rep == 'y' ? repeat = true : repeat = false;
+    return repeat;
 }
