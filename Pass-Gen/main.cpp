@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    Generator gen;
+    Generator gen; //creating an object 
     while (gen.toRepeat())
     {
         gen.generatePassword();
