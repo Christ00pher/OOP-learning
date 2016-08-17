@@ -16,6 +16,7 @@ void Stock::acquire(const std::string & co, long n, double pr)
     set_tot();
 }
 
+//buy actions
 void Stock::buy(long num, double price)
 {
     if (num < 0)
